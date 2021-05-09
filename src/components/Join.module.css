@@ -1,0 +1,111 @@
+.join-page{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.join-page__left-side{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), #fff), url('../assets/background-image.jpeg') center no-repeat;
+    background-size: cover;
+}
+
+.join-page__right-side{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #fff, rgba(0, 0, 0, 0)),rgba(184,220,236, 0.8);
+}
+
+.join-page__form{
+    height: 40rem;
+    width: 40rem;
+    background-color: transparent;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0 3rem 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.join-page__form i{
+    font-size: 10rem;
+    margin: 5rem 0;
+    color: #ffcc5c;
+}
+
+.join-page__input-group{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.join-page__input-group label{
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+    font-weight: 300;
+}
+
+.join-page__input-group input{
+    height: 3rem;
+    border-radius: 0.4rem;
+    outline: none;
+    border: none;
+    padding-left: 0.2rem;
+    background-color: rgba(184,220,236, 1);
+}
+
+
+.join-page__input-group select{
+    height: 3rem;
+    border-radius: 0.4rem;
+    outline: none;
+    border: none;
+    padding-left: 0.2rem;
+    background-color: rgba(184,220,236, 1);
+}
+
+.join-page__form button{
+    margin-top: 3rem;
+    padding: 1rem 5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    border: none;
+}
+
+.join-page__form button:hover{
+    cursor: pointer;
+    outline: none;
+}
+
+.join-page__form button:hover::before{
+    left: 100%;
+}
+
+.join-page__form button::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    top: 0;
+    left: -4rem;
+    right: 0;
+    bottom: 0;
+    background: #ffcc5c;
+    transform: rotate(90deg);
+    transition: all 0.5s;
+}
+
