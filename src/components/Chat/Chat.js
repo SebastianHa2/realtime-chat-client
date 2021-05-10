@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import queryString from 'query-string'
 import io from 'socket.io-client'
+import { Link } from 'react-router-dom'
 
 import classes from './Chat.module.css'
 import Messages from '../Messages/Messages'
@@ -14,6 +15,7 @@ const Chat = ({ location }) => {
     const [usersPresent, setUsersPresent] = useState([])
     const ENDPOINT = 'localhost:8080'
 
+    // Hook for user connecting or disconnecting
     useEffect(() => {
         const { name, room } = queryString.parse(location.search)
         socket = io(ENDPOINT)
@@ -35,8 +37,8 @@ const Chat = ({ location }) => {
     }, [ENDPOINT, location.search])
 
 
+    // Hook for a welcome message
     useEffect(() => {
-        // Event listener for a welcome message
         socket.on('message', message => {
             setMessages([...messages, message])
         })
@@ -46,6 +48,7 @@ const Chat = ({ location }) => {
         setMessage(event.target.value)
     }
 
+    // Hook for updating the users present in the room list
     useEffect(() => {
         socket.on('user-left', usersInRoom => {
             setUsersPresent(usersInRoom)
@@ -56,17 +59,21 @@ const Chat = ({ location }) => {
         })
     }, [usersPresent])
 
+    // Enter to send message
+    const keyPressHandler = event => {
+        if(event.key === 'Enter'){
+            sendMessageHandler()
+        }
+    }
+
     // Function for sending messages
-    const sendMessageHandler = event => {
-        event.preventDefault()
+    const sendMessageHandler = () => {
         if(message) {
             socket.emit('message-sent', message, () => {
                 setMessage('')
             })
         }
     }
-
-    console.log(usersPresent)
 
     return(
         <div className={classes['chat-page']}>
@@ -79,12 +86,15 @@ const Chat = ({ location }) => {
                 </ul>
             </div>
             <div className={classes['chat-page__chat-container']}>
+                <Link to="/">
+                    <h2 className={classes['chat-container__change-room']}>Change Room</h2>
+                </Link>
                 <h2 className={classes['chat-container__chat-heading']}>{room}</h2>
                 <div className={classes['chat-container__chat-output']}>
                     <Messages messages={messages} name={name}></Messages>
                 </div>
                 <div className={classes['chat-container__input']}>
-                    <input type="text" placeholder="Send a message" value={message} onChange={messageInputHandler} />
+                    <input type="text" placeholder="Send a message" value={message} onChange={messageInputHandler} onKeyPress={keyPressHandler} />
                     <button onClick={sendMessageHandler}>Send</button>
                 </div>
             </div>

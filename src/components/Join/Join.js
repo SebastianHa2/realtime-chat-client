@@ -51,7 +51,7 @@ const Join = () => {
                         <select name="room" id="room" onChange={roomChoiceChangeHandler}>
                             <option value="vermilion">Vermilion</option>
                             <option value="lavender">Lavender</option>
-                            <option value="lavender">Viridian</option>
+                            <option value="viridian">Viridian</option>
                         </select>
                     </div>
                     <Link to={`/chat?name=${nameInput}&room=${roomChoice}`} onClick={enterRoomHandler}> 

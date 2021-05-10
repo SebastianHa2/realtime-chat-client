@@ -25,6 +25,31 @@
     font-weight: 300;
 }
 
+.chat-container__change-room{
+    font-size: 3rem;
+    color: #ffcc5c;
+    text-shadow: 0.1rem 0.1rem 0.3rem #000;
+    font-family: 'Amatic SC', cursive;
+    margin-bottom: 3rem;
+    transition: all 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.chat-container__change-room::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 0.3s;
+}
+
+.chat-container__change-room:hover::before{
+    border-bottom: 0.2rem solid #ffcc5c;
+}
+
 .user-list{
     height: 75%;
     width: 100%;
