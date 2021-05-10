@@ -1,0 +1,43 @@
+.message{
+    max-width: 100%;
+    min-height: 4.5rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.message__owner{
+    max-width: 100%;
+    padding: 0 1rem;
+    min-height: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 0.5rem 0;
+}
+
+.message-sender__owner{
+    color: blue;
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.message-sender{
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.message-text__owner{
+    padding-left: 0.2rem;
+    word-break: break-all;
+    font-size: 1.2rem;
+}
+
+.message-text{
+    padding-right: 0.2rem;
+    font-size: 1.2rem;
+    word-break: break-all;
+}

@@ -47,6 +47,14 @@
     background-color: rgba(184,220,236, 1);
 }
 
+.chat-container__chat-heading{
+    font-size: 5rem;
+    color: #ffcc5c;
+    text-shadow: 0.1rem 0.1rem 0.3rem #000;
+    font-family: 'Amatic SC', cursive;
+    margin-bottom: 3rem;
+}
+
 .chat-container__chat-output{
     width: 50%;
     height: 60%;
