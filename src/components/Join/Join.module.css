@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
 .join-page{
     height: 100vh;
     width: 100%;
@@ -5,10 +7,21 @@
     position: relative;
 }
 
+.join-page__heading{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -25%);
+    font-size: 5rem;
+    color: #ffcc5c;
+    text-shadow: 0.1rem 0.1rem 0.3rem #000;
+    font-family: 'Amatic SC', cursive;
+}
+
 .join-page__left-side{
     width: 50%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), #fff), url('../assets/background-image.jpeg') center no-repeat;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), #fff), url('../../assets/background-image.jpeg') center no-repeat;
     background-size: cover;
 }
 
@@ -21,7 +34,7 @@
     background: linear-gradient(to right, #fff, rgba(0, 0, 0, 0)),rgba(184,220,236, 0.8);
 }
 
-.join-page__form{
+.join-page__credentials{
     height: 40rem;
     width: 40rem;
     background-color: transparent;
@@ -35,12 +48,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.join-page__form i{
-    font-size: 10rem;
-    margin: 5rem 0;
-    color: #ffcc5c;
 }
 
 .join-page__input-group{
@@ -75,7 +82,7 @@
     background-color: rgba(184,220,236, 1);
 }
 
-.join-page__form button{
+.join-page__credentials button{
     margin-top: 3rem;
     padding: 1rem 5rem;
     text-transform: uppercase;
@@ -86,16 +93,16 @@
     border: none;
 }
 
-.join-page__form button:hover{
+.join-page__credentials button:hover{
     cursor: pointer;
     outline: none;
 }
 
-.join-page__form button:hover::before{
+.join-page__credentials button:hover::before{
     left: 100%;
 }
 
-.join-page__form button::before{
+.join-page__credentials button::before{
     content: '';
     position: absolute;
     height: 100%;
@@ -107,5 +114,15 @@
     background: #ffcc5c;
     transform: rotate(90deg);
     transition: all 0.5s;
+}
+
+.join-page__input-group .invalid{
+    border: 0.1rem solid red;
+    background-color: rosybrown;
+}
+
+.join-page__input-group p{
+    margin-top: 0.4rem;
+    color: red;
 }
 
