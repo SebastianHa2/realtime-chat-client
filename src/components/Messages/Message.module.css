@@ -34,10 +34,43 @@
     padding-left: 0.2rem;
     word-break: break-all;
     font-size: 1.2rem;
+    background-color: rgba(184,220,236, 1);
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    position: relative;
+    z-index: 100;
+}
+
+.message-text__owner::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(184,220,236, 1);
+    border-radius: 1rem 1rem 1rem 0;
+    z-index: -10;
 }
 
 .message-text{
     padding-right: 0.2rem;
     font-size: 1.2rem;
     word-break: break-all;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    position: relative;
+    z-index: 100;
+}
+
+.message-text::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffcc5c;
+    border-radius: 1rem 1rem 0 1rem;
+    z-index: -10;
 }

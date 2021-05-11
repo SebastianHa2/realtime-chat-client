@@ -13,7 +13,7 @@ const Chat = ({ location }) => {
     const [message, setMessage] = useState([])
     const [messages, setMessages] = useState([])
     const [usersPresent, setUsersPresent] = useState([])
-    const ENDPOINT = 'localhost:8080'
+    const ENDPOINT = 'https://realtime-peace-chat.herokuapp.com/'
 
     // Hook for user connecting or disconnecting
     useEffect(() => {
